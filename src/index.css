@@ -1,10 +1,31 @@
+* {
+  font-family: "Manjari", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Hepta Slab", serif;
+}
+
+input {
+  border: none;
+  height: 20px;
+  border-radius: 2px;
+}
+
+button {
+  cursor: pointer;
+}
+
 .container {
   background-color: pink;
   padding: 10px;
   border-radius: 5px;
 }
 
-.singleResult { 
+.singleResult {
   display: flex;
   padding: 10px;
   border-bottom: solid;
@@ -12,12 +33,12 @@
   border-color: lightgrey;
 }
 
-.singleResult img { 
+.singleResult img {
   width: 20%;
-  height: 20%
+  height: 20%;
 }
 
-.singleResult *{
+.singleResult * {
   margin: 10px;
 }
 
@@ -48,26 +69,23 @@
   font-size: 18px;
 }
 
-#authors li:not(:first-child):before{
-  content: " • "
+#authors li:not(:first-child):before {
+  content: " • ";
 }
 
-
 #searchBar {
-  display: flex;  
+  display: flex;
 }
 
 #searchBox {
   padding: 10px;
-  width: 25%
+  width: 25%;
 }
-
 
 #suggestions {
   list-style-type: none;
   padding-left: 1px;
   cursor: pointer;
-
 }
 
 #suggestions li {
@@ -75,6 +93,5 @@
 }
 
 #suggestions li:hover {
-  color: red;
+  color: rgb(250, 110, 134);
 }
-

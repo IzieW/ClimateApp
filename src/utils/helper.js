@@ -1,10 +1,10 @@
-const formatDate = strDate => {
+const formatDate = (strDate) => {
   const date = new Date(strDate)
-  const month = date.toLocaleDateString('default', {month: 'long'})
+  const month = date.toLocaleDateString('default', { month: 'long' })
 
-  return (`${month} ${date.getDate()}, ${date.getFullYear()}`)
+  return `${month} ${date.getDate()}, ${date.getFullYear()}`
 }
 
 export default {
-  formatDate
+  formatDate,
 }

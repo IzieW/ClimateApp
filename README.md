@@ -9,7 +9,7 @@ Download NodeJS.
 npm install 
 
 ### Dotenv
-touch .env & add variable "REACT_APP_API" with API link complete with secret key. 
+touch .env & add variable "REACT_APP_API" with full API link.
 
 ### Start app on local host
 npm start

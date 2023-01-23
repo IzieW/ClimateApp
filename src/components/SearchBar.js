@@ -23,8 +23,9 @@ const SearchBox = ({ data, placeholder }) => {
         .filter((i) =>
           String(i.key).toLowerCase().includes(String(value).toLowerCase())
         )
-        .sort((a, b) => a.doc_count > b.doc_count)
+        .sort((a, b) => b.doc_count - a.doc_count)
         .slice(0, 5)
+
 
       setSuggested(suggest)
     } else {

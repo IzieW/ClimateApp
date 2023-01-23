@@ -11,12 +11,13 @@ const App = () => {
 
   useEffect(() => {
     // eslint-disable-next-line no-undef
-    axios.get(`${config.url}${config.APIKey}`)
+    axios
+      .get(`${config.url}${config.APIKey}`)
       .then((res) => {
         setResults(res.data.results)
         setFacets(res.data.facets)
       })
-      .catch(error => console.log(error))
+      .catch((error) => console.log(error))
   }, [])
 
   if (results) {

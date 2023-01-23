@@ -28,7 +28,6 @@ const SearchBox = ({ data, placeholder }) => {
         .slice(0, 5)
 
       setSuggested(suggest)
-
     } else {
       setFilter(value)
       setSuggested(data.slice(0, 5))
@@ -54,10 +53,11 @@ const SearchBox = ({ data, placeholder }) => {
         onChange={(event) => onChange(event.target.value)}
         placeholder="search"
       />
-      {chosen
-        ? <button onClick={reset}>x</button>
-        : <Suggestions data={suggested} selectSuggestion={selectSuggestion} />
-      }
+      {chosen ? (
+        <button onClick={reset}>x</button>
+      ) : (
+        <Suggestions data={suggested} selectSuggestion={selectSuggestion} />
+      )}
     </div>
   )
 }

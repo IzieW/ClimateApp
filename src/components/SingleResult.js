@@ -4,7 +4,7 @@ import helper from '../utils/helper'
 const SingleResult = ({ result }) => {
   return (
     <div className="singleResult">
-      <img src={result.thumbnail} style={{ float: 'left' }} />
+      <img src={result.thumbnail} />
       <div>
         <h2 id="title">{result.title}</h2>
         <div

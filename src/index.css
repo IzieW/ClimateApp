@@ -19,8 +19,11 @@ button {
   cursor: pointer;
 }
 
-.container {
+#heading {
   background-color: pink;
+}
+
+.container {
   padding: 10px;
   border-radius: 5px;
 }

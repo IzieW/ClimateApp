@@ -19,7 +19,7 @@ const App = () => {
   if (results) {
     return (
       <div>
-        <section className="container">
+        <section className="container" id="heading">
           <h1>Policy Explorer</h1>
           <SearchBar
             authors={facets.authors}

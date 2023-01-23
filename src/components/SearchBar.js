@@ -26,8 +26,8 @@ const SearchBox = ({ data, placeholder }) => {
         .sort((a, b) => b.doc_count - a.doc_count)
         .slice(0, 5)
 
-
       setSuggested(suggest)
+
     } else {
       setFilter(value)
       setSuggested(data.slice(0, 5))
@@ -53,7 +53,6 @@ const SearchBar = ({ authors, publishedYear, topics }) => {
   return (
     <div>
       <h3>
-        {' '}
         Filters
         {showFilters ? (
           <AiOutlineUp

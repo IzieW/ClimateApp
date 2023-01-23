@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai'
 
-const Suggestions = ({ data, setFilter }) => (
+const Suggestions = ({ data, selectSuggestion }) => (
   <ul id="suggestions">
     {data.map((dat, key) => (
-      <li key={key} onClick={() => setFilter(dat.key)}>
+      <li key={key} onClick={() => selectSuggestion(dat.key)}>
         {dat.key}
       </li>
     ))}
@@ -14,6 +14,7 @@ const Suggestions = ({ data, setFilter }) => (
 const SearchBox = ({ data, placeholder }) => {
   const [suggested, setSuggested] = useState(data.slice(0, 5))
   const [filter, setFilter] = useState('')
+  const [chosen, setChosen] = useState(false)
 
   const onChange = (value) => {
     if (value) {
@@ -34,6 +35,17 @@ const SearchBox = ({ data, placeholder }) => {
     }
   }
 
+  const reset = () => {
+    setFilter('')
+    setSuggested(data.slice(0, 5))
+    setChosen(false)
+  }
+
+  const selectSuggestion = (suggestion) => {
+    setFilter(suggestion)
+    setChosen(true)
+  }
+
   return (
     <div id="searchBox">
       <h4 style={{ padding: '0px', margin: '2px' }}>{placeholder}:</h4>
@@ -42,7 +54,10 @@ const SearchBox = ({ data, placeholder }) => {
         onChange={(event) => onChange(event.target.value)}
         placeholder="search"
       />
-      <Suggestions data={suggested} setFilter={onChange} />
+      {chosen
+        ? <button onClick={reset}>x</button>
+        : <Suggestions data={suggested} selectSuggestion={selectSuggestion} />
+      }
     </div>
   )
 }
